@@ -31,7 +31,7 @@ function Login() {
   })
   console.log(errors);
   return (
-    <div className=' flex justify-center items-center h-screen'>
+    <div className=' flex flex-col gap-5 justify-center items-center h-screen'>
       <form onSubmit={handleSubmit} className=' flex flex-col gap-1' autoComplete='off' action="">
         
         <label htmlFor='email'>Email</label>
@@ -43,6 +43,7 @@ function Login() {
         {errors.password && touched.password && <p className=' text-red-500'>{errors.password}</p>}
         <button disabled={isSubmitting} type='submit' className="btn btn-success">Success</button>
       </form>
+      <button onClick={()=>navigate("/forgot")} className=' text-center text-red-600'>Forgot Password?</button>
     </div>
   )
 }

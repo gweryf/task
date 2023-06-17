@@ -12,8 +12,8 @@ function FileUpload({formData, setFormData}){
 
     console.log(formData);
     return(
-        <div onClick={()=>document.getElementById("file-input").click()} className=" flex flex-col justify-center h-full items-center border-2 border-dashed cursor-pointer rounded-md border-blue-400">
-            <input id="file-input" type="file" onChange={(e)=>{
+        <div onClick={()=>document.getElementById("file-input").click()} className=" p-5 flex flex-col justify-center h-full items-center border-2 border-dashed cursor-pointer rounded-md border-blue-400">
+            <input className='file-input file-input-bordered file-input-success w-full max-w-xs' id="file-input" type="file" onChange={(e)=>{
                 setFormData({...formData, single_file:e.target.files[0]})
                 console.log(formData);
             }} accept="image/*" />

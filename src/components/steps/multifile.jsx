@@ -24,8 +24,8 @@ function MultiFileUpload({formData, setFormData}){
 
     return(
         <div className=" flex flex-col gap-5 h-full">
-            <div onClick={()=>document.getElementById("file-input").click()} className=" h-full flex flex-col justify-center items-center border-2 border-dashed cursor-pointer rounded-md border-blue-400">
-                <input multiple onChange={(e)=>{
+            <div onClick={()=>document.getElementById("file-input").click()} className=" px-2 h-full flex flex-col justify-center items-center border-2 border-dashed cursor-pointer rounded-md border-blue-400">
+                <input className='file-input file-input-bordered file-input-success w-full max-w-xs' multiple onChange={(e)=>{
                     const selectedFiles = Array.from(e.target.files);
                     setFiles(selectedFiles);
                 }} id="file-input" type="file" accept="image/*, .pdf" />
