@@ -55,8 +55,9 @@ function Form() {
   
     return (
       <div className=" w-full h-full flex flex-col justify-center items-center">
-        <div id="progressbar" className=" w-96 m-1 h-3 mb-12 bg-white">
-          <div
+        <div className=" text-center text-2xl font-bold py-2">Progress:</div>
+        <div id="progressbar" className=" w-96 m-1 h-3 mb-12 bg-white rounded-lg">
+          <div className=" rounded-lg"
             style={{width: page === 0 ? "20%" : page == 1 ? "40%" : page === 2 ? "60%" : page === 3 ? "80%" : "100%" }}
           ></div>
         </div>
