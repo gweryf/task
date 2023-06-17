@@ -6,8 +6,11 @@ import Success from "./steps/sucess";
 import { useState } from "react";
 import axios from "axios";
 import "../index.css"
+import { useNavigate } from "react-router-dom";
+
 
 function Form() {
+    const navigation = useNavigate()
     const [page, setPage] = useState(0);
     const [formData, setFormData] = useState({
       id:10,
@@ -76,14 +79,16 @@ function Form() {
             className=" btn btn-success"
               onClick={() => {
                 if (page === FormTitles.length - 1) {
-                  alert("FORM SUBMITTED");
                   axios.create({
                     baseURL:"https://x8ki-letl-twmt.n7.xano.io/api:XooRuQbs",
                     headers:{
                         Authorization: `Bearer ${localStorage.getItem("APIKey")}`,
                         "Content-Type":"multipart/form-data"
                     }
-                  }).post("/form",  formData).then((res)=>console.log(res)).catch(err=>alert(err))
+                  }).post("/form",  formData).then((res)=>{
+                    alert("Form has been Successfully Submitted");
+                    navigation("/");
+                  }).catch(err=>alert(err))
 
                 } else {
                   setPage((currPage) => currPage + 1);

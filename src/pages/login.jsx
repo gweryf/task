@@ -35,6 +35,7 @@ function Login() {
   console.log(errors);
   return (
     <div className=' flex flex-col gap-5 justify-center items-center h-screen'>
+      <h1 className=' text-center text-4xl font-extrabold'>Login</h1>
       <form onSubmit={handleSubmit} className=' flex flex-col gap-1' autoComplete='off' action="">
         
         <label htmlFor='email'>Email</label>
