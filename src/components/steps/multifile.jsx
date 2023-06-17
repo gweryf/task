@@ -7,6 +7,10 @@ function MultiFileUpload({formData, setFormData}){
         setFormData({ ...formData, multi_file: files });
     }, [files]);
 
+    useEffect(()=>{
+        setFormData({...formData, geolocation:JSON.stringify(location)})
+    }, [location])
+
     const loc = ()=>{
         if(location?.coordinates?.lat&&location?.coordinates?.lng){
             return(
