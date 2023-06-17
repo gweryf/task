@@ -41,7 +41,7 @@ function MultiFileUpload({formData, setFormData}){
                 <input className='file-input file-input-bordered file-input-success w-full max-w-xs' multiple onChange={(e)=>{
                     const selectedFiles = Array.from(e.target.files);
                     setFiles(selectedFiles);
-                }} id="file-input" type="file" accept=".pdf, .png, image/png" />
+                }} id="file-input" type="file" accept="image/png" />
             </div>
             <div className=" bg-slate-500 p-3 rounded-md text-white flex justify-center items-center">
                 {location.loaded  ? loc()  : "Cannot get Location" }

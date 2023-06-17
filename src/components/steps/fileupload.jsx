@@ -16,7 +16,7 @@ function FileUpload({formData, setFormData}){
             <input className='file-input file-input-bordered file-input-success w-full max-w-xs' id="file-input" type="file" onChange={(e)=>{
                 setFormData({...formData, single_file:e.target.files[0]})
                 console.log(formData);
-            }} accept=".pdf, .png, image/png" />
+            }} accept="image/png" />
         </div>
     )
 }
