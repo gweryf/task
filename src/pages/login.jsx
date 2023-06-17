@@ -43,9 +43,9 @@ function Login() {
         {errors.email && touched.email && <p className=' text-red-500'>{errors.email}</p>}
 
         <label htmlFor='password'>Password</label>
-        <input value={values.password} onBlur={handleBlur} onChange={handleChange} id='password' type="text" placeholder="Type here" className="input input-bordered input-primary w-full max-w-xs" /><br/>
+        <input value={values.password} onBlur={handleBlur} onChange={handleChange} id='password' type="password" placeholder="Type here" className="input input-bordered input-primary w-full max-w-xs" /><br/>
         {errors.password && touched.password && <p className=' text-red-500'>{errors.password}</p>}
-        <button disabled={isSubmitting} type='submit' className="btn btn-success">Success</button>
+        <button disabled={isSubmitting} type='submit' className="btn btn-success">Log-In</button>
       </form>
       <button onClick={()=>navigate("/forgot")} className=' text-center text-red-600'>Forgot Password?</button>
     </div>
