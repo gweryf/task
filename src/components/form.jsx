@@ -54,16 +54,17 @@ function Form() {
       <div className=" w-full h-full flex flex-col justify-center items-center">
         <div id="progressbar" className=" w-96 m-1 h-3 mb-12 bg-white">
           <div
-            style={{width: page === 0 ? "20%" : page == 1 ? "40" : page === 2 ? "60%" : page === 3 ? "80%" : "100%" }}
+            style={{width: page === 0 ? "20%" : page == 1 ? "40%" : page === 2 ? "60%" : page === 3 ? "80%" : "100%" }}
           ></div>
         </div>
-        <div className="form-container">
+        <div className=" flex flex-col justify-center items-center gap-3 w-96 h-2/3 rounded-lg shadow-lg bg-slate-600 p-7">
           <div className="header">
-            <h1>{FormTitles[page]}</h1>
+            <h1 className=" p-1 text-center text-2xl font-extrabold">{FormTitles[page]}</h1>
           </div>
-          <div className="body">{PageDisplay()}</div>
-          <div className="footer">
+          <div className=" h-full flex justify-center items-center">{PageDisplay()}</div>
+          <div className=" w-full flex justify-around items-center">
             <button
+              className=" btn btn-error"
               disabled={page == 0}
               onClick={() => {
                 setPage((currPage) => currPage - 1);
@@ -72,6 +73,7 @@ function Form() {
               Prev
             </button>
             <button
+            className=" btn btn-success"
               onClick={() => {
                 if (page === FormTitles.length - 1) {
                   alert("FORM SUBMITTED");
