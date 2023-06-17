@@ -1,4 +1,4 @@
-import useGeoLocation from "../useGeolocation"
+import useGeoLocation from "../useGeoLocation"
 import { useEffect, useState } from "react"
 function MultiFileUpload({formData, setFormData}){
     const location = useGeoLocation()
