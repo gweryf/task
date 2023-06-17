@@ -17,7 +17,10 @@ function Login() {
       }}).post("/auth/login", {email:values.email, password:values.password}).then((res)=>{
         localStorage.setItem("APIKey", res.data.authToken)
         navigate("/home")
-      }).catch(err=>alert(err))
+      }).catch(err=>{
+        alert("Enter Correct Credentials");
+        actions.resetForm();
+      })
     
   }
 
