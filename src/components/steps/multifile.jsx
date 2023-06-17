@@ -8,19 +8,32 @@ function MultiFileUpload({formData, setFormData}){
     }, [files]);
 
     const loc = ()=>{
-        return(
-            <div>
-                <h1 className=" text-center font-bold">Your Location is:</h1>
-                <div className=" text-center">Latitude:
-                    {location.coordinates.lat}
+        if(location?.coordinates?.lat&&location?.coordinates?.lng){
+            return(
+                <div>
+                    <h1 className=" text-center font-bold">Your Location is:</h1>
+                    <div className=" text-center">Latitude:
+                        {location.coordinates.lat}
+                    </div>
+                    <div className=" text-center">
+                        Longitude:
+                        {location.coordinates.lng}
+                    </div>
                 </div>
-                <div className=" text-center">
-                    Longitude:
-                    {location.coordinates.lng}
+            )        
+        } else{
+            return(
+
+                <div>
+                    <h1 className=" text-center font-bold">Your Location is:</h1>
+                    <div className=" text-center">
+                        {location.error.message}
+                    </div>
                 </div>
-            </div>
-        )        
+            )
+        }
     }
+
 
     return(
         <div className=" flex flex-col gap-5 h-full">
@@ -31,7 +44,7 @@ function MultiFileUpload({formData, setFormData}){
                 }} id="file-input" type="file" accept="image/*, .pdf" />
             </div>
             <div className=" bg-slate-500 p-3 rounded-md text-white flex justify-center items-center">
-                {location.loaded ? loc():"Location Data Not Available"}
+                {location.loaded  ? loc()  : "Cannot get Location" }
             </div>
         </div>
     )
