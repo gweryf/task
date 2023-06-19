@@ -3,10 +3,9 @@
 Repo Link: https://github.com/gweryf/task
 Deployed Link: https://task-zeta-rose.vercel.app/
 
-##Login 
-Email ID -> levitation@levitation.in
-Password -> levitation
-
+## Login 
+<li> Email ID -> levitation@levitation.in </li>
+<li>Password  -> levitation </li>
 
 ## Screen Shots
 ![image](https://github.com/gweryf/task/assets/105338002/67ed0dd3-8da0-483c-9ab6-4045cc3fc36a)
